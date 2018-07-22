@@ -1,0 +1,69 @@
+* 사전조사
+
+CUAV_Hardware
+
+ - https://github.com/cuav/CUAV_Hardware/tree/master/6S_Smart%20batt-DEMO
+ - https://github.com/cuav/CUAV_Hardware/tree/master/Pixhack_V3
+
+Dropix
+
+ - https://github.com/drotek/Dropix/blob/master/Hardware/Dropix.PDF
+
+* Project Log
+
+** <2017-12-31 일>
+아침에 일어 났다. 'The Deveil is a Part-Timer'를 켜두고 pixracer
+참고하는중. 
+
+2017-12-31-13:58
+목이 좀 아프네. 오늘의 목표 maru-pixracer-power 완성 
+
+** <2018-02-04 일>
+
+maru-pixracer 파워 패스 
+
+PX4FMUv2 픽스호크는 servo 로부터 파워를 받는데 
+X21_V2는 servo로 부터 파워를 받지 않는다. 
+기본 파워는 VBUS(USB)와 V_BRICK(파워모듈)로 부터 받고 
+LTC4415 (파워OR, 전류제한) 를 거쳐서 VDD_5V를 만든다. 
+VDD_5V는 4개의 LDO(LP5907-Q1, 250mA)을 거쳐서 각각 
+내부 파워 (IO_VDD_3V3, FMU_VDD_3V3, VDD_3V3_SPEKTRUM, VDD_3V3_SENSORS)로 출력되고 
+VDD_5V는 TPS2062(1A Dual Current Limiter, 파워 스위치) 외부 파워에 나눌때는 TPS2062사용 를 거쳐 두개의 외부 파워 (VDD_5V_PERIPH, VDD_5V_RC)로 출력된다. 
+
+** <2018-02-17 토>
+ - [ ] schematic 그리기 작업 
+201~200~FTSH-103-02-L-DV
+
+** <2018-02-19 월>
+maru 작업 순서 
+
+ - 0. schematic 그리기
+ - 1. schematic 검토 *
+ - 2. part package 매칭
+ - 3. pcb 그리기 
+ - 4. 부품구매 
+ - 5. 조립 
+ - 6. 테스트/펌웨어 올리기
+
+** <2018-02-21 화>
+20mmx20mm 원점 잡고. maru x21 PCB 그리는중. 50x30.5 사이즈.
+
+Dwgs.User에 가이드선 그리고 그리니깐 편리하네 
+
+** <2018-02-22 Thu>
+
+ - 3. pcb 그리기 작업중
+
+FTSH-103-02-L-DV
+
+** <2018-03-13 화>
+ - 4층 각층은 동박은 1 ounce 두께로 주문 
+ - 외곽선이 3지점 라인을 손상 시킨다. 한샘디지텍 외곽선 0.2 공차오차가
+   있다. 그래서 좌우 0.5mm씩 늘려버리기로.
+ 주문한 메탈마스크 업체: 2장에 10만원 
+ - 덕진전자 현수 010-5345-7023 dreammer70@hanmail.net
+    경기도 광명시 광명로831번길 9, 3층 
+
+** <2018-04-01 일>
+ - 납땜 필요.
+ - 
